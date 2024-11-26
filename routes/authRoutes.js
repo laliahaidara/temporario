@@ -78,35 +78,21 @@ router.post('/register', async (req, res) => {
 
 // Rota POST para login de Empresa Júnior
 router.post('/login', async (req, res) => {
-  const { Email, Senha } = req.body;
-
+  const { email, senha } = req.body;
   try {
-    // Busca a Empresa Júnior pelo Email
-    const ej = await userModel.findOne({ where: { Email } });
+    const ej = await userModel.findOne({ where: { Email: email } });
 
-    if (!ej) {
-      return res.render('auth/login', { error: 'Email ou senha incorretos.' });
+    if (ej) {
+      const senhaValida = await bcrypt.compare(senha, ej.Senha);
+      if (senhaValida) {
+        req.session.empresaLogada = ej.ID; // Armazena o ID na sessão
+        return res.redirect('/auth/perfil'); // Redireciona para o perfil
+      }
     }
-
-    // Valida a senha
-    const senhaValida = await bcrypt.compare(Senha, ej.Senha);
-
-    if (senhaValida) {
-      // Salva as informações do usuário na sessão (incluindo ID, Nome e Email)
-      req.session.user = {
-        id: ej.ID,
-        nome: ej.Nome,
-        email: ej.Email,
-      };
-
-      // Redireciona para a página de perfil
-      res.redirect('/auth/perfil');
-    } else {
-      res.render('auth/login', { error: 'Email ou senha incorretos.' });
-    }
+    res.render('auth/login', { error: 'Email ou senha incorretos. Tente novamente.' });
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Erro ao processar login.');
+    console.error('Erro no login:', error);
+    res.render('auth/login', { error: 'Ocorreu um erro. Tente novamente.' });
   }
 });
 
