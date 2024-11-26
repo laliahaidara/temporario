@@ -2,89 +2,129 @@
 
 <div class="container mt-5">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <h1 class="text-center text-primary mb-4">mudar texto</h1> <!-- Título estilizado -->
-  <p>Ainda não conhece o nosso HUB?(mudar fonte)</p>
-  <a href="/about"><button class="btn btn-outline-danger" style="border-radius: 25px; margin-bottom: 50px; ">Sobre nós</button></a>
+  <h1>ALGUMA COISA</h1>  
+  <h2 class="custom-heading">
+      Seja bem-vindo ao começo de grandes projetos e conexões. 
+      No Integra IF você pode iniciar, crescer e inovar. Cadastre-se já ou saiba mais!
+    </h2>
+
+  <a href="/about">
+    <button class="btn btn-outline-danger btn-lg sobre-nos-btn">Quem somos</button>
+  </a>
+  <!-- Adicionado maior espaçamento -->
+  <div style="margin-bottom: 50px;"></div>
   <div class="row">
-    <% if (projects && projects.length > 0) { %> <!-- Verifica se existe algum projeto -->
+    <% if (projects && projects.length > 0) { %>
       <% projects.forEach(project => { %>
         <div class="col-md-4 mb-4">
-          <div class="card shadow-lg" style="border-radius: 20px; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+          <div class="card shadow-lg" style="border-radius: 20px; overflow: hidden;">
             <div class="card-body">
               <img src="img/teste.webp" class="card-img-top" alt="Imagem do projeto" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
               <div class="card-info">
-                <h5 class="card-title text-info"><%= project.title %></h5>
+                <h5 class="card-title text-dark"><%= project.title %></h5>
                 <p class="card-text"><%= project.description %></p>
-                <a href="#" class="btn btn-primary" style="border-radius: 20px;">Saiba mais</a>
+                <a href="#" class="btn btn-primary">Saiba mais</a>
               </div>
             </div>
           </div>
         </div>
       <% }); %>
-    <% } else { %> <!-- Caso não haja projetos -->
-      <p class="text-center text-warning">Nenhum projeto disponível no momento.</p> <!-- Mensagem de aviso -->
+    <% } else { %>
+      <p class="text-center text-secondary">Nenhum projeto disponível no momento.</p>
     <% } %>
   </div>
 </div>
 
 <%- include('partials/footer') %>
 
-<!-- Arquivo CSS customizado -->
+<!-- Estilos atualizados -->
 <style>
-  body {
-    background-color: #fff;
-    font-family: 'Arial', sans-serif;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-  .container {
-    max-width: 1200px;
-  }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffff;
+}
 
-  /* Estilo geral dos cards */
-  .card {
-    transition: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px; /* Arredondando as bordas do card */
-  }
+.custom-heading {
+  font-size: 2.25rem;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border-right: 5px solid #323eba;
+  border-radius: 20px;
+}
 
-  /* Estilo fixo para as informações do card */
-  .card-info {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 20px; /* Arredondando as bordas da área de informações */
-  }
+.sobre-nos-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-  /* Efeito de hover no card inteiro */
-  .card:hover {
-    transform: translateY(-5px) scale(1.05); /* Efeito de aumento ao passar o mouse */
-    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.15);
-  }
+.sobre-nos-btn:hover {
+  background-color: #d9043d;
+  color: #fff;
+  transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
 
-  .card:hover .card-info {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-  }
+.card {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: transform 0.9s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
 
-  .card-info h5, .card-info p, .card-info a {
-    transition: transform 0.3s ease;
-  }
+.card:hover {
+  transform: translateY(-5px) scale(1.05); /* Efeito de aumentar e elevar */
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
 
-  .btn-primary {
-    border-radius: 20px; /* Arredondando as bordas do botão */
-    transition: background-color 0.3s ease;
-  }
+.card-info {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 20px;
+}
 
-  .btn-primary:hover {
-    background-color: #d9043d;
-  }
+.card-info h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  transition: transform 0.3s ease;
+}
 
-  /* Aumentando o espaço entre o botão e os cards */
-  .container p {
-    margin-bottom: 30px;
-  }
+.card-info p {
+  font-size: 0.9rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-info {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #d9043d;
+}
+
+/* Estilo de transição suave para o conteúdo do card */
+.card-info h5, .card-info p, .btn-primary {
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.container p {
+  margin-bottom: 50px; /* Espaçamento aumentado */
+}
 </style>
-
-<%- include('partials/footer') %>
