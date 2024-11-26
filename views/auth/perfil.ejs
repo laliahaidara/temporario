@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-header text-center">
+      <h2>Perfil da Empresa Júnior</h2>
+    </div>
+    <div class="card-body text-center">
+      <!-- aqui vai a foto de perfil -->
+      <div class="mb-4">
+        <% if (empresa.FotoPerfil) { %>
+          <img src="<%= empresa.FotoPerfil %>" alt="Foto de Perfil" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+        <% } else { %>
+          <img src="/images/default-profile.png" alt="Foto de Perfil Padrão" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+        <% } %>
+        <form action="/perfil/upload" method="POST" enctype="multipart/form-data" class="mt-3">
+          <label for="FotoPerfil" class="form-label">Alterar Foto de Perfil:</label>
+          <input type="file" name="FotoPerfil" id="FotoPerfil" accept="image/*" class="form-control">
+          <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+        </form>
+      </div>
+
+      <!-- aqui vai as info da ej -->
+      <h3><%= empresa.Nome %></h3>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

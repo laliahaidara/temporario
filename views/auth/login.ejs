@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <h2 class="text-center">Login</h2>
+  
+  <% if (typeof error !== 'undefined') { %>
+    <div class="alert alert-danger text-center"><%= error %></div>
+  <% } %>
+  
+  <!-- form de login -->
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" id="senha" name="senha" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+  </form>
+
+  <!-- login com o google - ajeitar!!!! -->
+  <p class="text-center mt-3">
+    Ou faça login com o Google:
+    <a href="/auth/google" class="btn btn-danger">Login com Google</a>
+  </p>
+</div>
+
+<%- include('../partials/footer') %>

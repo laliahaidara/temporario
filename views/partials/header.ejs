@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntegraIF</title>
+
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Web Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar com Logo à esquerda e Slide Tabs -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Logo da navbar -->
+      <a class="navbar-brand" href="/">
+        <img src="img/logo_m_icone.png" style="width: 70%;" alt="Logo do Navbar" class="logo">
+      </a>
+
+      <!-- Slide Tabs como Navbar -->
+      <div class="">
+        <a href="/" class="tab" id="home-tab">Início</a>
+        <a href="/about" class="tab" id="about-tab">Sobre Nós</a>
+        <a href="/contact" class="tab" id="contact-tab">Contato</a>
+        <% if (user) { %>
+          <a href="/logout" class="tab" id="logout-tab">Sair</a>
+        <% } else { %>
+          <a href="/auth/login" class="tab" id="login-tab">Entrar</a>
+        <% } %>
+        <div class="cursor" id="cursor"></div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // Função que anima o cursor (linha de destaque)
+    const tabs = document.querySelectorAll('.tab');
+    const cursor = document.getElementById('cursor');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('mouseenter', (e) => {
+        const tabWidth = e.target.offsetWidth;
+        const tabLeft = e.target.offsetLeft;
+
+        cursor.style.width = `${tabWidth}px`;
+        cursor.style.left = `${tabLeft}px`;
+      });
+      tab.addEventListener('mouseleave', () => {
+        cursor.style.width = 0;
+      });
+    });
+  </script>
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+    .logo {
+      width: 50%; /* Ajusta a largura da logo */
+      height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .navbar .navbar-nav .nav-item {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    /* Estilo dos links */
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 18px;
+      
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    /* Slide Tabs - agora vai ser a navbar */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 50%; /* Ajuste o tamanho das abas */
+      background-color: #fff;
+      padding: 10px 0;
+      border-radius: 50px;
+      border-style: solid;
+      border-color: #3c1fde;
+      font-family: 'Sora', sans-serif;
+    }
+
+    .tab {
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 16px;
+      padding: 10px 20px;
+      color: #271491;
+      background-color: transparent;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .tab:hover {
+      color: #d9043d;
+    }
+
+    /* Cursor que segue o mouse */
+    .cursor {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      background-color: #d9043d;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    /* Conteúdo da página */
+    .content {
+      margin-top: 80px; /* Espaço para não sobrepor a navbar */
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

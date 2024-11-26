@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <h2 class="text-center">Registro</h2>
+
+  <% if (error) { %>
+    <div class="alert alert-danger text-center"><%= error %></div>
+  <% } %>
+
+  <!-- form de registro -->
+  <form action="/register" method="POST">
+    <div class="form-group">
+      <label for="ID">ID</label>
+      <input type="text" class="form-control" id="ID" name="ID" maxlength="14" required>
+    </div>
+    <div class="form-group">
+      <label for="nome">Nome da Empresa Júnior</label>
+      <input type="text" class="form-control" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" id="senha" name="senha" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+
+  <p class="text-center mt-3">
+    Já possui uma conta? <a href="/login">Faça login</a>.
+  </p>
+</div>
+
+<%- include('../partials/footer') %>

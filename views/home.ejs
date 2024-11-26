@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <h1 class="text-center text-primary mb-4">mudar texto</h1> <!-- Título estilizado -->
+  <p>Ainda não conhece o nosso HUB?(mudar fonte)</p>
+  <a href="/about"><button class="btn btn-outline-danger" style="border-radius: 25px; margin-bottom: 50px; ">Sobre nós</button></a>
+  <div class="row">
+    <% if (projects && projects.length > 0) { %> <!-- Verifica se existe algum projeto -->
+      <% projects.forEach(project => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-lg" style="border-radius: 20px; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+            <div class="card-body">
+              <img src="img/teste.webp" class="card-img-top" alt="Imagem do projeto" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+              <div class="card-info">
+                <h5 class="card-title text-info"><%= project.title %></h5>
+                <p class="card-text"><%= project.description %></p>
+                <a href="#" class="btn btn-primary" style="border-radius: 20px;">Saiba mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %> <!-- Caso não haja projetos -->
+      <p class="text-center text-warning">Nenhum projeto disponível no momento.</p> <!-- Mensagem de aviso -->
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Arquivo CSS customizado -->
+<style>
+  body {
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  /* Estilo geral dos cards */
+  .card {
+    transition: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; /* Arredondando as bordas do card */
+  }
+
+  /* Estilo fixo para as informações do card */
+  .card-info {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px; /* Arredondando as bordas da área de informações */
+  }
+
+  /* Efeito de hover no card inteiro */
+  .card:hover {
+    transform: translateY(-5px) scale(1.05); /* Efeito de aumento ao passar o mouse */
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.15);
+  }
+
+  .card:hover .card-info {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-info h5, .card-info p, .card-info a {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary {
+    border-radius: 20px; /* Arredondando as bordas do botão */
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #d9043d;
+  }
+
+  /* Aumentando o espaço entre o botão e os cards */
+  .container p {
+    margin-bottom: 30px;
+  }
+</style>
+
+<%- include('partials/footer') %>
