@@ -33,13 +33,13 @@ passport.use(new LocalStrategy({
 
 // Serializa o usuário na sessão
 passport.serializeUser((user, done) => {
-    done(null, user.ID);  // Guarda o ID do usuário na sessão
+    done(null, user.id);  // Guarda o ID do usuário na sessão
 });
 
 // Desserializa o usuário a partir da sessão
 passport.deserializeUser(async (id, done) => {
     try {
-        const usuario = await userModel.findOne({ where: { ID: id } });
+        const usuario = await userModel.findOne({ where: { id: id } });
         done(null, usuario);  // Retorna o usuário com o ID armazenado na sessão
     } catch (error) {
         done(error);
