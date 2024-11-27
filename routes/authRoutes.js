@@ -6,14 +6,14 @@ const router = express.Router();
 
 // Rota POST para registro no formato `/register`
 router.post('/register', async (req, res) => {
-  const { id, nome, email, senha } = req.body;
+  const { cnpj, nome, email, senha } = req.body;
 
   try {
-    // Vazlida se o id ou o Email já foram cadastrados
-    const existente = await userModel.findOne({ where: { id } });
+    // Vazlida se o cnpj ou o Email já foram cadastrados
+    const existente = await userModel.findOne({ where: { cnpj } });
     if (existente) {
       return res.render('auth/register', { 
-        error: 'Já existe uma Empresa Júnior registrada com este id.' 
+        error: 'Já existe uma Empresa Júnior registrada com este cnpj.' 
       });
     }
 
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
 
     // Cria o registro no banco de dados
     await userModel.create({
-      id,
+      cnpj,
       nome,
       email,
       senha: senhaCriptografada,

@@ -66,7 +66,7 @@ app.post('/auth/login', async (req, res) => {
       if (senhaValida) {
         // Armazenando os dados completos do usuário na sessão
         req.session.user = {
-          id: ej.ID,
+          cnpj: ej.cnpj,
           nome: ej.Nome,
           email: ej.Email,
         };
@@ -87,13 +87,13 @@ app.get('/register', (req, res) => {
 
 // Rota POST para registro
 app.post('/auth/register', async (req, res) => {
-  const { ID, Nome, Email, Senha } = req.body;
+  const { cnpj, Nome, Email, Senha } = req.body;
   try {
     const salt = await bcrypt.genSalt(10);
     const senhaCriptografada = await bcrypt.hash(Senha, salt);
 
     await userModel.create({
-      ID,
+      cnpj,
       Nome,
       Email,
       Senha: senhaCriptografada,

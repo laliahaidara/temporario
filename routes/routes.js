@@ -46,11 +46,11 @@ const autenticar = (req, res, next) => {
 
 // rota para a página de perfil
 router.get('/perfil', autenticar, async (req, res) => {
-  const id = req.session.empresaLogada;
-  console.log(id)
+  const cnpj = req.session.empresaLogada;
+  console.log(cnpj)
 
   try {
-    const ej = await userModel.findByPk(id);
+    const ej = await userModel.findByPk(cnpj);
 
     if (ej) {
       res.render('auth/perfil', { ej }); // renderiza a página 'perfil.ejs' com os dados da empresa
@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
     if (ej) {
       const senhaValida = await bcrypt.compare(senha, ej.senha);
       if (senhaValida) {
-        req.session.empresaLogada = ej.id; // Armazena o ID na sessão
+        req.session.empresaLogada = ej.cnpj; // Armazena o cnpj na sessão
         return res.redirect('/perfil'); // Redireciona para o perfil
       }
     } else res.render('/login', { error: 'Email ou senha incorretos. Tente novamente.' });

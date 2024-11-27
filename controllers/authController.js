@@ -33,14 +33,14 @@ passport.use(new LocalStrategy({
 
 // Serializa o usuário na sessão
 passport.serializeUser((user, done) => {
-    done(null, user.id);  // Guarda o ID do usuário na sessão
+    done(null, user.cnpj);  // Guarda o cnpj do usuário na sessão
 });
 
 // Desserializa o usuário a partir da sessão
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (cnpj, done) => {
     try {
-        const usuario = await userModel.findOne({ where: { id: id } });
-        done(null, usuario);  // Retorna o usuário com o ID armazenado na sessão
+        const usuario = await userModel.findOne({ where: { cnpj: cnpj } });
+        done(null, usuario);  // Retorna o usuário com o cnpj armazenado na sessão
     } catch (error) {
         done(error);
     }
