@@ -1,14 +1,13 @@
 <%- include('../partials/header') %>
-
 <div class="container mt-5">
   <div class="card mx-auto" style="max-width: 600px;">
     <div class="card-header text-center">
       <h2>Perfil da Empresa Júnior</h2>
     </div>
     <div class="card-body text-center">
-      <!-- aqui vai a foto de perfil -->
+      <!-- Foto de Perfil -->
       <div class="mb-4">
-          <img src="/images/default-profile.png" alt="Foto de Perfil Padrão" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+        <img src="/images/default-profile.png" alt="Foto de Perfil Padrão" class="rounded-circle">
         <form action="/perfil/upload" method="POST" enctype="multipart/form-data" class="mt-3">
           <label for="FotoPerfil" class="form-label">Alterar Foto de Perfil:</label>
           <input type="file" name="FotoPerfil" id="FotoPerfil" accept="image/*" class="form-control">
@@ -16,10 +15,81 @@
         </form>
       </div>
 
-      <!-- aqui vai as info da ej -->
+      <!-- Informações da EJ -->
       <h3><%= ej.nome %></h3>
     </div>
   </div>
 </div>
+<style>
+  /* Body com display flex para garantir que o footer fique no final */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que a página ocupe a altura total */
+  }
 
+  /* A seção principal do conteúdo vai ocupar o espaço restante */
+  .container {
+    flex-grow: 1;
+  }
+
+  .card {
+    margin-top: 20px;
+  }
+
+  /* Footer sempre no final da página */
+  footer {
+    margin-top: auto;
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: #d9043d;
+  }
+
+  /* Estilos adicionais para a página de perfil */
+  .card-header h2 {
+    font-family: 'Sora', sans-serif;
+  }
+
+  .card-body img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .form-label {
+    font-family: 'Sora', sans-serif;
+    color: #555;
+  }
+
+  .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .btn-primary:hover {
+    background-color: #004085;
+    border-color: #003366;
+  }
+
+  /* Tamanho e estilo das informações da empresa */
+  h3 {
+    font-family: 'Sora', sans-serif;
+    color: #343a40;
+  }
+
+</style>
 <%- include('../partials/footer') %>
+
