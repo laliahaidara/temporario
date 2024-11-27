@@ -59,7 +59,6 @@
         </li>
       </ul>
       <hr>
-      <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
     </div>
   </div>
   
@@ -71,11 +70,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  font-family: 'Sora', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
+    background-image: url('img/bg4x/bg@4x.webp'); /* Substitua pelo caminho da sua imagem */
+    background-size: 100%; /* Mantém o tamanho original da imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: left bottom; /* Posiciona no canto superior esquerdo */
+    background-color: #ffff; /* Cor de fundo como fallback */
+
 }
 
 #contact {
@@ -202,7 +205,7 @@ textarea {
 }
 
 .contact-text a:hover {
-  color: #d9043d;
+  color: #271491;
   text-decoration: none;
 }
 
@@ -261,15 +264,9 @@ textarea {
   color: #271491;
 }
 
-.copyright {
-  font: 200 14px 'Oswald', sans-serif;
-  color: #555;
-  letter-spacing: 1px;
-  text-align: center;
-}
 
 hr {
-  border-color: rgba(255,255,255,.6);
+  border-color: #271491;
 }
 
 /* Media Queries */
