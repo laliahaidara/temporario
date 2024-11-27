@@ -2,76 +2,67 @@
 
 <!-- Inclusão da CDN do Font Awesome no head -->
 <head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <section id="contact">
   <h1>Fale com a gente!</h1>
   
   <div class="contact-wrapper">
+  
     <!-- Left contact page --> 
-    <div class="form-container">
-      <form id="contact-form" class="form-horizontal" role="form">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="name" placeholder="Seu nome" name="nome" value="" required>
-          </div>
+    <form id="contact-form" class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="name" placeholder="Seu nome" name="nome" value="" required>
         </div>
+      </div>
 
-        <div class="form-group">
-          <div class="col-sm-12">
-            <label for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" placeholder="Email@email.com" name="email" value="" required>
-          </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="email">E-mail:</label>
+          <input type="email" class="form-control" id="email" placeholder="Email@email.com" name="email" value="" required>
         </div>
+      </div>
 
-        <label for="email">Mensagem</label>
-        <textarea class="form-control" rows="10" placeholder="Escreva sua mensagem" name="mensagem" required></textarea>
-        
-        <button class="btn btn-danger send-button" id="submit" type="submit" value="enviar">
-          <div class="alt-send-button">
-            <i class="fas fa-paper-plane"></i><span class="send-text">ENVIAR</span>
-          </div>
-        </button>
-      </form>
-    </div>
+      <label for="email">Mensagem</label>
+      <textarea class="form-control" rows="10" placeholder="Escreva sua mensagem" name="mensagem" required></textarea>
+      
+      <button class="btn btn-danger send-button" id="submit" type="submit" value="enviar">
+        <div class="alt-send-button">
+          <!-- Usando a classe do Font Awesome corretamente -->
+          <i class="fas fa-paper-plane"></i><span class="send-text">ENVIAR</span>
+        </div>
+      </button>
+    </form>
     
     <!-- Right contact page --> 
-    <div class="social-container"> 
+    <div class="direct-contact-container"> 
       <h2>Nos acompanhe pelas redes sociais</h2>
       <hr>
       <ul class="social-media-list">
-        <!-- Links para as redes sociais -->
-        <li>
-          <a href="https://github.com/laliahaidara/IntegraIF-HUB" target="_blank" class="contact-icon" title="Visite nosso GitHub">
-            <i class="fab fa-github" aria-hidden="true"></i>
-          </a>
+        <li><a href="https://github.com/laliahaidara/IntegraIF-HUB" target="_blank" class="contact-icon">
+          <i class="fab fa-github" aria-hidden="true"></i></a>
         </li>
-        <li>
-          <a href="https://www.linkedin.com/in/integra-if-hub/" target="_blank" class="contact-icon" title="Nos acompanhe no LinkedIn">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-          </a>
+        <li><a href="https://www.linkedin.com/in/integra-if-hub/" target="_blank" class="contact-icon">
+          <i class="fab fa-linkedin" aria-hidden="true"></i></a>
         </li>
-        <li>
-          <a href="https://www.instagram.com/integraif.hub/?igsh=YWZkYTlrbGExMWlh" target="_blank" class="contact-icon" title="Siga-nos no Instagram">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-          </a>
+        <li><a href="https://instagram.com" target="_blank" class="contact-icon">
+          <i class="fab fa-instagram" aria-hidden="true"></i></a>
         </li>
       </ul>
       <ul class="contact-list">
         <li class="list-item">
-          <i class="">
-            <span class="contact-text gmail">
-              <a href="mailto:integraif.hub@gmail.com" title="Nos mande um email">integraif.hub@gmail.com</a>
-            </span>
-          </i>
+          <!-- A classe 'fa-envelope' é usada corretamente para ícone de e-mail -->
+          <i class=""><span class="contact-text gmail"><a href="mailto:integraif.hub@gmail.com" title="Nos mande um email">integraif.hub@gmail.com</a></span></i>
         </li>
       </ul>
       <hr>
       <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
     </div>
   </div>
+  
 </section>  
 
 <style>
@@ -84,11 +75,11 @@ body {
   font-family: 'Sora', sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
 }
 
 #contact {
-  flex-grow: 1;
+  flex-grow: 1; /* O conteúdo cresce para ocupar o espaço restante */
 }
 
 h1 {
@@ -112,22 +103,22 @@ label{
   font-size: larger;
   color: #fff;
 }
-
 .contact-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
   padding: 20px;
   position: relative;
   max-width: 840px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Aumenta o espaço inferior */
 }
 
-.form-container {
+.form-horizontal {
   max-width: 400px;
   font-family: 'Lato';
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Aumenta o espaço abaixo do formulário */
 }
 
 .form-control, 
@@ -170,7 +161,7 @@ textarea {
   transform: translate3d(0px, -29px, 0px);
 }
 
-.social-container {
+.direct-contact-container {
   max-width: 400px;
   margin-top: 40px;
 }
@@ -300,12 +291,12 @@ hr {
 </style>
 
 <script>
-  // Script para limpar os campos após o envio
-  document.querySelector('#contact-form').addEventListener('submit', function(e) {
+  document.querySelector('#contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Mensagem enviada com sucesso!');
-    e.target.reset();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
   });
 </script>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer') %> 

@@ -65,78 +65,79 @@
     });
   </script>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-    
-    /* Padronizando a largura da logo */
-    .logo {
-      width: 120px; /* Define uma largura fixa para a logo */
-      height: auto; /* Mantém a proporção da imagem */
-    }
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+  
+  /* Padronizando a largura da logo */
+  .logo {
+    width: 150px; /* Define uma largura fixa para a logo */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: -100px; /* Move a logo para a esquerda */
+  }
 
-    /* Estilo dos links da navbar */
-    .navbar-nav .nav-link {
-      color: #333 !important;
-      font-size: 16px;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      margin-left: 15px;
-      transition: color 0.3s ease;
-    }
+  /* Estilo dos links da navbar */
+  .navbar-nav .nav-link {
+    color: #333 !important;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+  }
 
-    .navbar-nav .nav-link:hover {
-      color: #d9043d; /* Cor do link quando passar o mouse */
-    }
+  .navbar-nav .nav-link:hover {
+    color: #d9043d; /* Cor do link quando passar o mouse */
+  }
 
-    /* Slide Tabs */
-    .tab {
-      cursor: pointer;
-      font-size: 16px;
-      padding: 10px 20px;
-      color: #271491;
-      background-color: transparent;
-      position: relative;
-      transition: all 0.3s ease;
-      font-family: 'Sora', sans-serif;
-    }
+  /* Slide Tabs */
+  .tab {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #271491;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: 'Sora', sans-serif;
+  }
 
-    .tab:hover {
-      color: #d9043d;
-    }
+  .tab:hover {
+    color: #d9043d;
+  }
 
-    /* Cursor de destaque */
-    .cursor {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 5px;
-      background-color: #d9043d;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-    }
+  /* Cursor de destaque */
+  .cursor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: #d9043d;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
 
-    /* Ajuste do ícone de perfil */
-    .perfil {
-      width: 40px;
-      height: 40px;
-    }
+  /* Ajuste do ícone de perfil */
+  .perfil {
+    width: 40px;
+    height: 40px;
+  }
 
-    /* Ajuste geral da navbar */
-    .navbar {
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+  /* Ajuste geral da navbar */
+  .navbar {
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 
-    /* Para garantir que o conteúdo da página não sobreponha a navbar */
-    .content {
-      margin-top: 80px; /* Ajusta o espaço para a navbar */
-    }
+  /* Para garantir que o conteúdo da página não sobreponha a navbar */
+  .content {
+    margin-top: 80px; /* Ajusta o espaço para a navbar */
+  }
 
-    /* Estilo para a parte ativa da navbar */
-    .navbar-nav .active {
-      color: #d9043d !important;
-    }
-  </style>
+  /* Estilo para a parte ativa da navbar */
+  .navbar-nav .active {
+    color: #d9043d !important;
+  }
+</style>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
