@@ -45,7 +45,7 @@ app.use('/auth', authRoutes);
 // Middleware de autenticação
 function verificarAutenticacao(req, res, next) {
   if (!req.session.user) { // Verifica se o usuário está logado
-    return res.redirect('/auth/login'); // Se não estiver autenticado, redireciona para o login
+    return res.redirect('/login'); // Se não estiver autenticado, redireciona para o login
   }
   next(); // Se estiver autenticado, continua o processamento da rota
 }
@@ -81,12 +81,12 @@ app.post('/auth/login', async (req, res) => {
 });
 
 // Rota para registro
-app.get('/auth/registro', (req, res) => {
-  res.render('auth/registro'); // Página de registro
+app.get('/register', (req, res) => {
+  res.render('auth/register'); // Página de registro
 });
 
 // Rota POST para registro
-app.post('/auth/registro', async (req, res) => {
+app.post('/auth/register', async (req, res) => {
   const { ID, Nome, Email, Senha } = req.body;
   try {
     const salt = await bcrypt.genSalt(10);
@@ -102,7 +102,7 @@ app.post('/auth/registro', async (req, res) => {
     res.redirect('/auth/login'); // Depois do registro, redireciona para o login
   } catch (error) {
     console.error('Erro no registro:', error);
-    res.render('auth/registro', { error: 'Erro ao cadastrar. Tente novamente.' });
+    res.render('auth/register', { error: 'Erro ao cadastrar. Tente novamente.' });
   }
 });
 
