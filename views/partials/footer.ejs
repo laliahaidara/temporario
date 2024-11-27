@@ -1,21 +1,71 @@
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4" style="color: #0000007a;">
-    <div class="container">
-      <p id="footer-description" class="mb-0">Desenvolvido por <a href="/about" target="_blank" class="text-white">
-        <img src="img/branco.png" alt="" style="width: 90px; height: 100%;"></a></p>
-      <div class="social-links mt-3">
-        <p class="mb-0">Nos acompanhe pelas redes sociais!</p>
-        <a href="https://www.instagram.com/integraif.hub?igsh=YWZkYTlrbGExMWlh" target="_blank" class="text-white mx-2">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.linkedin.com/in/integra-if-hub/" target="_blank" class="text-white mx-2">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <hr style="border-color: #6d6d6d;">
-        <p class="mb-0" style="color: #6d6d6d;">© 2024 Integra IF. Todos os direitos reservados.</p>
-      </div>
+<footer class="footer bg-dark text-white text-center py-4">
+  <div class="container">
+    <p id="footer-description" class="mb-0">
+      Desenvolvido por <a href="/about" target="_blank" class="text-white">
+        <img src="img/branco.png" alt="Logo" class="footer-logo">
+      </a>
+    </p>
+    <div class="social-links mt-3">
+      <p class="mb-0">Nos acompanhe pelas redes sociais!</p>
+      <a href="https://www.instagram.com/integraif.hub?igsh=YWZkYTlrbGExMWlh" target="_blank" class="text-white mx-2">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/integra-if-hub/" target="_blank" class="text-white mx-2">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <hr class="footer-divider">
+      <p class="mb-0" style="color: #6d6d6d;">© 2024 Integra IF. Todos os direitos reservados.</p>
     </div>
+  </div>
 </footer>
 
 <!-- Scripts do FontAwesome para os ícones sociais -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+/* Ajustando o logo do footer para ser padronizado */
+.footer-logo {
+  width: 80px; /* Tamanho fixo para o logo */
+  height: auto;
+}
+
+/* Ajustando o layout dos links sociais no footer */
+.social-links a {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #d9043d; /* Cor ao passar o mouse */
+}
+
+/* Divisor horizontal no footer */
+.footer-divider {
+  border-color: #6d6d6d;
+}
+
+/* Estilos gerais para o footer */
+.footer {
+  background-color: #343a40; /* Fundo escuro */
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer .container {
+  max-width: 960px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Garantindo que o footer não sobreponha o conteúdo */
+.footer .social-links {
+  margin-top: 20px;
+}
+</style>

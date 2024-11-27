@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <div class="login-clean">
+  <h1>Login</h1>
   <form action="/login" method="POST">
-    <h2 class="sr-only">Login Form</h2>
     <div class="illustration">
       <img src="img/I_icone@2x.png" alt="" class="img-center">
     </div>
@@ -18,15 +18,25 @@
     <div class="form-group">
       <button class="btn btn-primary btn-block" type="submit">Entrar</button>
     </div>
-    <a href="/forgot-password" class="forgot">Forgot your email or password?</a>
     <p class="text-center mt-3">
-      Ainda não tem uma conta? 
-      <a href="/register" class="btn btn-danger btn-block mt-2">Cadastre-se</a>
+      Ainda não tem uma conta?<a href="/register">Cadastre-se</a>
+      
     </p>
   </form>
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+h1{
+  margin: 0px ;
+  padding-bottom: 20px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  color: #271491;
+  text-align: center;
+}
   .login-clean {
     background: #f1f7fc;
     padding: 80px 0;
@@ -104,6 +114,12 @@
     opacity: 1;
     text-decoration: none;
   }
+
+.btn-danger{
+  background-color: #271491;
+  border: #271491;
+  border-radius: 40px;
+}
 </style>
 
 <%- include('../partials/footer') %>
