@@ -19,8 +19,7 @@
       <button class="btn btn-primary btn-block" type="submit">Entrar</button>
     </div>
     <p class="text-center mt-3">
-      Ainda não tem uma conta?<a href="/register">Cadastre-se</a>
-      
+      Ainda não tem uma conta?<a href="/register"> Cadastre-se</a>
     </p>
   </form>
 </div>
@@ -28,94 +27,97 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-h1{
-  margin: 0px ;
+h1 {
+  margin: 0px;
   padding-bottom: 20px;
   font-family: 'Sora', sans-serif;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 80px; /* Aumentando o tamanho do título */
   color: #271491;
   text-align: center;
 }
-  .login-clean {
-    background: #f1f7fc;
-    padding: 80px 0;
-  }
 
-  .login-clean form {
-    max-width: 320px;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 4px;
-    color: #505e6c;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  }
+.login-clean {
+  background: #f1f7fc;
+  padding: 100px 0; /* Aumentando o padding superior e inferior */
+}
 
-  .login-clean .illustration {
-    text-align: center;
-    padding: 0 0 20px;
-    font-size: 100px;
-    color: rgb(244, 71, 107);
-  }
+.login-clean form {
+  max-width: 400px; /* Aumentando a largura do formulário */
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 50px; /* Aumentando o padding interno do formulário */
+  border-radius: 8px; /* Aumentando o border-radius */
+  color: #505e6c;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15); /* Tornando a sombra um pouco mais forte */
+}
 
-  .login-clean .illustration img {
-    display: block;
-    margin: 0 auto;
-    max-width: 80px; /* Limitar o tamanho da imagem */
-    height: auto;
-    transform: translateX(-10px); /* Move a imagem um pouco para a esquerda */
-  }
+.login-clean .illustration {
+  text-align: center;
+  padding: 0 0 20px;
+  font-size: 120px; /* Aumentando o tamanho do ícone */
+  color: rgb(244, 71, 107);
+}
 
-  .login-clean form .form-control {
-    background: #f7f9fc;
-    border: none;
-    border-bottom: 1px solid #dfe7f1;
-    border-radius: 0;
-    box-shadow: none;
-    outline: none;
-    color: inherit;
-    text-indent: 8px;
-    height: 42px;
-  }
+.login-clean .illustration img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px; /* Aumentando o tamanho da imagem */
+  height: auto;
+  transform: translateX(-10px);
+}
 
-  .login-clean form .btn-primary {
-    background: #f4476b;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 26px;
-    text-shadow: none;
-    outline: none !important;
-  }
+.login-clean form .form-control {
+  background: #f7f9fc;
+  border: none;
+  border-bottom: 2px solid #dfe7f1; /* Tornando a borda inferior mais espessa */
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 10px; /* Aumentando o indent */
+  height: 50px; /* Aumentando a altura dos campos de input */
+  font-size: 16px; /* Aumentando o tamanho da fonte nos campos */
+}
 
-  .login-clean form .btn-primary:hover,
-  .login-clean form .btn-primary:active {
-    background: #eb3b60;
-  }
+.login-clean form .btn-primary {
+  background: #f4476b;
+  border: none;
+  border-radius: 8px; /* Aumentando o border-radius */
+  padding: 15px; /* Aumentando o padding do botão */
+  font-size: 18px; /* Aumentando o tamanho da fonte do botão */
+  box-shadow: none;
+  margin-top: 30px;
+  text-shadow: none;
+  outline: none !important;
+}
 
-  .login-clean form .btn-primary:active {
-    transform: translateY(1px);
-  }
+.login-clean form .btn-primary:hover,
+.login-clean form .btn-primary:active {
+  background: #eb3b60;
+}
 
-  .login-clean form .forgot {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #6f7a85;
-    opacity: 0.9;
-    text-decoration: none;
-  }
+.login-clean form .btn-primary:active {
+  transform: translateY(1px);
+}
 
-  .login-clean form .forgot:hover,
-  .login-clean form .forgot:active {
-    opacity: 1;
-    text-decoration: none;
-  }
+.login-clean form .forgot {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
 
-.btn-danger{
+.login-clean form .forgot:hover,
+.login-clean form .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.btn-danger {
   background-color: #271491;
   border: #271491;
   border-radius: 40px;
