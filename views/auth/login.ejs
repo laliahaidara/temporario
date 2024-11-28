@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
+
 <body>
   
-
 <div class="login-clean">
   <h1>Login</h1>
   <form action="/login" method="POST">
@@ -30,6 +30,10 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+body {
+}
+
+
 h1 {
   margin: 0px;
   padding-bottom: 20px;
@@ -42,8 +46,16 @@ h1 {
 }
 
 .login-clean {
-  background: #f1f7fc;
-  padding: 100px 0; /* Aumentando o padding superior e inferior */
+  padding: 100px 100px; /* Aumentando o padding superior e inferior */
+  margin: 0;
+  display: left;
+  flex-direction: column;
+  min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
+    background-image: url('img/bg4x/bg@4x.webp'); /* Substitua pelo caminho da sua imagem */
+    background-size: 40%; /* Mantém o tamanho original da imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: left bottom; /* Posiciona no canto superior esquerdo */
+    background-color: #ffff; /* Cor de fundo como fallback */
 }
 
 .login-clean form {
