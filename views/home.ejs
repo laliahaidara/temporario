@@ -8,9 +8,11 @@
       No Integra IF você pode iniciar, crescer e inovar. Cadastre-se já ou saiba mais!
     </h2>
 
+    <div class="center-container">
   <a href="/about">
     <button class="btn btn-outline-danger btn-lg sobre-nos-btn">Quem somos</button>
   </a>
+</div>
   <!-- Adicionado maior espaçamento -->
   <div style="margin-bottom: 50px;"></div>
   <div class="row">
@@ -43,12 +45,11 @@
 
 body {
     background-color: #ffff; /* Cor de fundo como fallback */
+    font-family: "Poppins", sans-serif;
 }
 
-
-
 .custom-heading {
-  font-size: 2.25rem;
+  font-size: 1.4rem;
   color: #333;
   background-color: #f8f9fa;
   padding: 15px;
@@ -56,10 +57,19 @@ body {
   margin-bottom: 10px;
   border-right: 5px solid #323eba;
   border-radius: 20px;
+  text-align: center;
 }
 
+.center-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 10vh;
+}
+
+
 .sobre-nos-btn {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 10px 20px;
   border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
