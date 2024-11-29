@@ -1,19 +1,66 @@
 <%- include('partials/header') %>
 
-<div class="container mt-5">
+<div class="container-fluid p-0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Carrossel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="img/md1.jpg" alt="Primeiro slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Bem-vindo ao Integra IF</h5>
+          <p>Conecte-se com empresas juniores para transformar ideias em realidade.</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/HUBF.jpg" alt="Segundo slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Inove e Cresça</h5>
+          <p>Descubra novas oportunidades de empreendedorismo.</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/produtosAzul.jpeg" alt="Terceiro slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5></h5>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+    </a>
+  </div>
+</div>
+
+<div class="container mt-5">
   <h1> Nossas Empresas Juniores</h1>  
   <h2 class="custom-heading">
-      Seja bem-vindo ao começo de grandes projetos e conexões. 
-      No Integra IF você pode iniciar, crescer e inovar. Cadastre-se já ou saiba mais!
-    </h2>
+    Abra as portas para novas oportunidades e colaborações. 
+    No <strong id="estilo">Integra IF</strong>, você pode dar os primeiros passos rumo ao sucesso, expandir seu potencial e trazer ideias inovadoras à vida. 
+    <strong><a href="/register">Junte-se</a></strong> a nós e descubra como podemos transformar o futuro juntos!
+  </h2>
 
-    <div class="center-container">
-  <a href="/about">
-    <button class="btn btn-outline-danger btn-lg sobre-nos-btn">Quem somos</button>
-  </a>
-</div>
-  <!-- Adicionado maior espaçamento -->
+  <div class="center-container">
+    <a href="/about">
+      <button class="btn btn-outline-danger btn-lg sobre-nos-btn">Quem somos</button>
+    </a>
+  </div>
+
   <div style="margin-bottom: 50px;"></div>
   <div class="row">
     <% if (projects && projects.length > 0) { %>
@@ -48,16 +95,55 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.custom-heading {
-  font-size: 1.4rem;
+h1{
+  font-family: 'Sora', sans-serif;
+  text-align: center;
+  color: #1c0e67;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2.custom-heading {
+  font-size: 1.5rem;
   color: #333;
   background-color: #f8f9fa;
-  padding: 15px;
-  margin-top: 100px;
+  padding: 20px;
+  margin-top: 50px;
   margin-bottom: 10px;
-  border-right: 5px solid #323eba;
+  border-left: 5px solid #271491;
   border-radius: 20px;
   text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+a,h2.custom-heading strong {
+  color: #d9043d;
+}
+
+
+
+/* Estilo atualizado para o carrossel */
+.carousel-inner img {
+  width: 100%;
+  height: 90vh; /* Altura reduzida para cortar mais a parte de baixo */
+  object-fit: cover; /* Mantém a proporção da imagem */
+  object-position: top; /* Posiciona a imagem para cortar mais embaixo */
+}
+
+.carousel-caption h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .center-container {
@@ -66,7 +152,6 @@ body {
   align-items: center;
   height: 10vh;
 }
-
 
 .sobre-nos-btn {
   font-size: 1.1rem;
@@ -132,12 +217,10 @@ body {
   border-color: #d9043d;
 }
 
-/* Estilo de transição suave para o conteúdo do card */
-.card-info h5, .card-info p, .btn-primary {
-  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-}
-
 .container p {
   margin-bottom: 50px; /* Espaçamento aumentado */
 }
+
+/* Alterando a cor das setas do carrossel */
+
 </style>
